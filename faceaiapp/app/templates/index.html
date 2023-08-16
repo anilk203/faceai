@@ -1,0 +1,22 @@
+{% extends "base-template.html" %} {% block title %} {% endblock %} {%
+block content %}
+
+<div class="container">
+	<h1 class="display-6">Face AI</h1>
+</div>
+
+<a href="{{ url_for('register') }}" class="btn btn-outline-primary">Register</a>
+<a href="{{ url_for('recognize') }}" class="btn btn-outline-secondary">Recognize</a>
+<a href="{{ url_for('registry') }}" class="btn btn-outline-success">Registry</a>
+
+
+{% endblock %} {% block scripts %}
+
+
+
+<script type="text/javascript">
+	
+</script>
+
+
+{% endblock %}

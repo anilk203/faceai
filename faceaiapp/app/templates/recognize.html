@@ -1,0 +1,41 @@
+{% extends "base-template.html" %} {% block title %} {% endblock %} {%
+block content %}
+
+
+
+<div class="container">
+	<h1 class="display-6">Recognize a Face</h1>
+
+
+
+	<form action="{{ url_for('recognize') }}" method="post"
+		enctype="multipart/form-data">
+
+		<div class="mb-3">
+			<label for="file" class="form-label">Choose a file to
+				Recognize</label> <input class="form-control border border-danger"
+				name="file" type="file" id="file">
+		</div>
+
+		<button type="submit" class="btn btn-primary">Recognize</button>
+		<a href="{{ url_for('index') }}" class="btn btn-outline-primary">Home</a>
+
+		 {% if data %}
+		<div class="mb-3">
+			<div class="card">
+
+				<div class="card-body">
+					<h5 class="card-title">Recognize Output</h5>
+					<p class="card-text">{{ data }}</p>
+				</div>
+			</div>
+		</div>
+		{% endif %} {% endblock %} {% block scripts %}
+</div>
+
+<script type="text/javascript">
+	
+</script>
+
+
+{% endblock %}

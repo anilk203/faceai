@@ -1,0 +1,7 @@
+gunicorn==19.9.0
+supervisor==4.0.4
+PyMySQL==0.9.3
+pyway==0.3.14
+Flask==2.3.2
+Werkzeug==2.3.6
+requests==2.31.0

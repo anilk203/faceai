@@ -1,0 +1,67 @@
+{% extends "base-template.html" %} {% block title %} {% endblock %} {%
+block content %}
+
+
+
+<div class="">
+	<h1 class="display-6">All Registrations</h1>
+
+
+	{% if data %}
+	<div class="mb-3">
+		<div class="card">
+
+			<div class="card-body">
+
+
+				<table
+					class="table table-info table-striped table-bordered border-primary">
+					<thead>
+						<tr>
+							<th scope="col">Registration Id</th>
+							<th scope="col">User Id</th>
+							<th scope="col">User Name</th>
+							<th scope="col">File Name</th>
+							<th scope="col">File Path</th>
+							<th scope="col">File Size</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for d in data -%}
+						<tr>
+							<th scope="row">{{ d.registration_id }}</th>
+							<td>{{ d.user_id }}</td>
+							<td>{{ d.registration_id }}</td>
+							<td>{{ d.user_name }}</td>
+							<td>{{ d.l_file_name }}</td>
+							<td>{{ d.l_file_size_in_kb }}</td>
+						</tr>
+						{% endfor %}
+
+					</tbody>
+				</table>
+
+
+
+				<a href="{{ url_for('index') }}" class="btn btn-outline-primary">Home</a>
+
+
+
+
+			</div>
+		</div>
+	</div>
+	{% endif %}
+
+</div>
+
+{% endblock %} {% block scripts %}
+
+
+
+<script type="text/javascript">
+	
+</script>
+
+
+{% endblock %}

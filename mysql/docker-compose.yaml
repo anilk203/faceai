@@ -1,0 +1,24 @@
+version: "3.3"
+services:
+  faceaidb:
+   build:
+     context: .
+     dockerfile: ./Dockerfile
+   container_name: faceaidb
+   restart: always
+   ports:
+    - 4906:3306
+   volumes:
+   - ./dsdatabase-data:/var/lib/mysql:z
+   - /var/run/docker.sock:/var/run/docker.sock
+   environment:
+     - MYSQL_ROOT_PASSWORD=mysql
+   command: --default-authentication-plugin=mysql_native_password
+   networks:
+     - deep_ai_network  
+      
+networks:
+   deep_ai_network:
+      external: true      
+      
+ 

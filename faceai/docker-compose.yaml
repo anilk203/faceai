@@ -1,0 +1,21 @@
+version: "3.3"
+services:
+  faceai:
+    container_name: faceai
+    image: deepquestai/deepstack:arm64
+    ports:
+      - "10001:5000"
+    volumes:
+      - ./localstorage:/datastore
+    environment:
+      - MODE=High
+      - VISION-FACE=True
+    networks:
+     - deep_ai_network
+ 
+      
+networks:
+   deep_ai_network:
+      external: true      
+      
+ 

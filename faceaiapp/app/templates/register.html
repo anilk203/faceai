@@ -1,0 +1,56 @@
+{% extends "base-template.html" %} {% block title %} {% endblock %} {%
+block content %}
+
+
+
+<div class="container">
+	<h1 class="display-6">Register a Face</h1>
+
+
+
+	<form action="{{ url_for('register') }}" method="post"
+		enctype="multipart/form-data">
+		<div class="mb-3">
+
+			<input type="text" class="form-control" name="face_name"
+				id="face_name" placeholder="Enter a name for Face">
+		</div>
+		<div class="mb-3">
+
+			<input class="form-control border border-danger" name="file"
+				type="file" id="file">
+		</div>
+
+		<button type="submit" class="btn btn-primary">Register</button>
+		<a href="{{ url_for('index') }}" class="btn btn-outline-primary">Home</a>
+
+		{% if 'status' in response_data %}
+		<div class="mb-3">
+			<div class="card">
+
+				<div class="card-body">
+					<h5 class="card-title">Register Output</h5>
+					<p class="card-text">{{ response_data }}</p>
+				</div>
+			</div>
+		</div>
+		{% endif %}
+
+
+
+
+
+	</form>
+
+</div>
+
+{% endblock %} {% block scripts %}
+
+
+
+<script type="text/javascript">
+	
+</script>
+
+
+{% endblock %}

@@ -1,0 +1,19 @@
+version: "3.3"
+services:
+  faceaiapp:
+    container_name: faceaiapp
+    build:
+     context: .
+     dockerfile: ./app/Dockerfile
+    ports:
+      - "10000:5000"
+    volumes:
+     - ./app:/app
+    networks:
+     - deep_ai_network
+
+networks:
+   deep_ai_network:
+      external: true      
+      
+ 
