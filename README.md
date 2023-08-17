@@ -3,6 +3,14 @@ docker network create deep_ai_network
 
 # client
 
+##### Create images directory under client and place the images to register
+
+##### Register faces (single or multiple):
+```
+cd client
+mkdir images
+```
+
 config.json - list of images can be registered with name.
 
 ```
@@ -21,14 +29,14 @@ ex:
 }
 ```
 
-Register faces (single or multiple):
 
 ```
 python register-faces.py
 
 ```
 
-Recognize faces (single):
+##### Recognize faces (single):
+open the recognize-faces.py file and replace IMAGE_NAME_WITH_EXTENSION with file.
 
 ```
 python recognize-faces.py
@@ -69,6 +77,12 @@ Default ports can be updated in docker-compose.yml
 ```
 docker-compose up -d
 
+```
+##### create a folder recoginze under / 
+```
+docker exec -it faceaiapp bash
+cd /
+mkdir recognize
 ```
 
 ##### http://localhost:10000
